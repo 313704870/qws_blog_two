@@ -31,6 +31,7 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 //Route::resource('users', 'UsersController', ['only' => ['show', 'update', 'edit']]);
 
+// 这里edit 修改页面。使用put 不好使。得用patch才好用。
 Route::get('/users/{user}', 'UsersController@show')->name('users.show');
 Route::get('/users/{user}/edit', 'UsersController@edit')->name('users.edit');
 Route::patch('/users/{user}', 'UsersController@update')->name('users.update');
