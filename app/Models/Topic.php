@@ -7,6 +7,16 @@ class Topic extends Model
     //protected $fillable = ['title', 'body', 'user_id', 'category_id', 'reply_count', 'view_count', 'last_reply_user_id', 'order', 'excerpt', 'slug'];
     protected $fillable = ['title', 'body', 'category_id', 'excerpt', 'slug'];
 
+
+    /**
+     * 一对多
+     * 帖子和回复关联
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function replies(){
+        return $this->hasMany(Reply::class);
+    }
+    
     /*
      * hasone     正向关联 一对一
      * belongsTo  反向关联 一对一
